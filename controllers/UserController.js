@@ -20,14 +20,27 @@ const NewUser = async (req, res) => {
 
 const singleUser = async (req, res) => {
   try {
-    const oneUser = await Users.findbyPk(req.params.user_id, {
+    const oneUser = await Users.findByPk(req.params.user_id, {
       attributes: ['username', 'email'],
-      include: {
-        model: myComics,
-        model: reviewedComics
-      }
+      include: [
+        {
+          model: myComics
+        },
+        {
+          model: reviewedComics
+        }
+      ]
     })
     res.send(oneUser)
+  } catch (error) {
+    throw error
+  }
+}
+
+const oneUser = async (req, res) => {
+  try {
+    const user = await Users.findByPk(req.params.user_id)
+    res.send(user)
   } catch (error) {
     throw error
   }
@@ -63,5 +76,6 @@ module.exports = {
   NewUser,
   singleUser,
   deleteUser,
-  updateUser
+  updateUser,
+  oneUser
 }

@@ -52,7 +52,7 @@ const updateReview = async (req, res) => {
 
 async function getSingleReview(req, res) {
   try {
-    const review = await reviewedComics.findbyPk(req, params, review_id, {
+    const review = await reviewedComics.findByPk(req, params, review_id, {
       include: [
         {
           model: Users,

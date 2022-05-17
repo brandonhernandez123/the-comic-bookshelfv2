@@ -11,7 +11,7 @@ const getShelf = async (req, res) => {
 
 const getSingleComic = async (req, res) => {
   try {
-    const comic = await myComics.findbyPk(req.params.comic_id)
+    const comic = await myComics.findByPk(req.params.comic_id)
     res.send(comic)
   } catch (error) {
     throw error

@@ -4,7 +4,7 @@ const cors = require('cors')
 const logger = require('morgan')
 
 const MyComicRoutes = require('./routes/MyComicRoutes')
-const ReviewedComics = require('./routes/ReviewedComicsControllers')
+const ReviewedComics = require('./routes/ReviewRoutes')
 const UserRoutes = require('./routes/UserRoutes')
 
 const PORT = process.env.PORT || 3001
