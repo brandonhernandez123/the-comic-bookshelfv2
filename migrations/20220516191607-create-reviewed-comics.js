@@ -15,7 +15,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       review: {
         type: Sequelize.STRING

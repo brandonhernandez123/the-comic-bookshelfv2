@@ -2,7 +2,13 @@ const { myComics, Users } = require('../models')
 
 const getShelf = async (req, res) => {
   try {
-    const comics = await myComics.findAll()
+    const comics = await myComics.findAll({
+      include: [
+        {
+          model: Users
+        }
+      ]
+    })
     res.send(comics)
   } catch (error) {
     throw error

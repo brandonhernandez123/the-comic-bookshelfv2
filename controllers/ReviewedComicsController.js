@@ -18,7 +18,7 @@ const getReviews = async (req, res) => {
 
 const newReview = async (req, res) => {
   try {
-    const review = reviewedComics.create(req.body)
+    const review = await reviewedComics.create(req.body)
     res.send(review)
   } catch (error) {
     throw error

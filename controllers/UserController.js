@@ -37,14 +37,14 @@ const singleUser = async (req, res) => {
   }
 }
 
-const oneUser = async (req, res) => {
-  try {
-    const user = await Users.findByPk(req.params.user_id)
-    res.send(user)
-  } catch (error) {
-    throw error
-  }
-}
+// const oneUser = async (req, res) => {
+//   try {
+//     const user = await Users.findByPk(req.params.user_id)
+//     res.send(user)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const deleteUser = async (req, res) => {
   try {
@@ -76,6 +76,6 @@ module.exports = {
   NewUser,
   singleUser,
   deleteUser,
-  updateUser,
-  oneUser
+  updateUser
+  // oneUser
 }
