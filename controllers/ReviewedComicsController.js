@@ -5,7 +5,7 @@ const getReviews = async (req, res) => {
     const review = await reviewedComics.findAll({
       include: [
         {
-          model: 'Users',
+          model: Users,
           attributes: ['username']
         }
       ]
