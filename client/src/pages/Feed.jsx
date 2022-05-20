@@ -19,6 +19,8 @@ const Feed = (props) => {
 
     return(
         <Container fluid className='feed'>
+            <h1 className='reviewtitle'>Review feed</h1>
+            <br/>
            {reviews.map((review) => (
                <Row className='reviewfeed'>
                  <Card id='reviewcard'>
