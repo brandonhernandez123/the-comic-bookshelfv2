@@ -24,7 +24,7 @@ const Feed = (props) => {
            {reviews.map((review) => (
                <Row className='reviewfeed'>
                  <Card id='reviewcard'>
-                    <Card.Img variant="top" src={review.image} />
+                    <Card.Img variant="top" src={review.image} height={800} width={360} />
                     <Card.Body>
                     <Card.Title>{review.title} reviewed by {review.User.username}</Card.Title>
                     <Card.Text>

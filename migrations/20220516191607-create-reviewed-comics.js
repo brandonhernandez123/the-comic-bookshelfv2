@@ -19,10 +19,10 @@ module.exports = {
         allowNull: false
       },
       review: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       userId: {
         type: Sequelize.INTEGER,
