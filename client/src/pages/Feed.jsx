@@ -15,7 +15,7 @@ const Feed = (props) => {
         Reviews()
     }, [])
 
-    console.log(reviews)
+   
 
     return(
         <Container fluid className='feed'>
