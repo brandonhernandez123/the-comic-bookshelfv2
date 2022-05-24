@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Bangers', cursive;
 }
 
 /* css for navbar */
@@ -35,8 +36,32 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   width: 100%;
 }
 
-.singlehero{
+.herocard{
+  border: 2px solid black;
+  color: white;
+  background-color: brown;
+  margin: 50px auto;
+
+}
+
+#herodeck{
+  margin: 50px auto;
+}
+
+.charmodal {
+  overflow: scroll;
+  
+}
+
+.charinfo{
   background-color: black;
   color: white;
-  height: 100vh;
+  overflow: scroll;
+  font-family: 'Bangers', cursive;
+}
+
+.chartitle{
+  background-color: black;
+  color: white;
+  font-family: 'Bangers', cursive;
 }
