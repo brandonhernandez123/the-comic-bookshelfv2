@@ -86,3 +86,26 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   border-radius: 50px;
   background: white;
 }
+
+
+/* css for comics page */
+.comicpage{
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-gap: 1em;
+  padding: 0.5em;
+  text-align: center;
+  
+}
+
+.comiccard{
+  background-color: black;
+  color: white;
+}
+
