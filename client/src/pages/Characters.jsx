@@ -27,24 +27,24 @@ const Characters = () => {
     setSearchQuery(e.target.value)
   }
 
-  const charstyle = {
-    width: '400px'
-  }
+ 
 
   console.log(searchResults)
 
   return (
-    <div>
+    <div className='characters'>
       <h1>Search Characters</h1>
       <form onSubmit={getSearchResults}>
         <input
+          id='charactersearch'
           type="text"
           placeholder="Ex: Spider-Man, Batman, Iron-Man ETC"
           value={searchQuery}
           onChange={getResults}
         />
-        <button type="submit">Search</button>
+        <button id='charactersearchbutton'type="submit">Search</button>
       </form>
+      <h4>Want to learn more about your favorite characters? Here is the place to do so!</h4>
       <div>
         {searchResults.map((hero, index) => (
           <Container fluid>

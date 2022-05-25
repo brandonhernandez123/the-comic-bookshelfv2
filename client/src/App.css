@@ -65,3 +65,24 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   color: white;
   font-family: 'Bangers', cursive;
 }
+
+.characters{
+  background-image: url(https://i.pinimg.com/736x/8f/85/4e/8f854e5acdd706798ffb5f2cd7551cc3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+#charactersearch{
+  width: 300px;
+  border-radius: 150px;
+  color: black;
+  background-color: white;
+}
+
+#charactersearchbutton{
+  width: 100px;
+  border-radius: 50px;
+  background: white;
+}
