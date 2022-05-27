@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
-const CharModal = (props) => {
+const CharModal = (props, index) => {
   return (
     <Modal {...props} size="lg" centered className="charmodal">
       <Modal.Header className="chartitle" closeButton>

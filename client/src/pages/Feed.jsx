@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Card, Button } from 'react-bootstrap'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
+import AddToShelf from '../components/AddToShelf'
 
 const Feed = (props) => {
   const [reviews, setReviews] = useState([])
@@ -18,8 +19,8 @@ const Feed = (props) => {
     <Container fluid className="feed">
       <h1 className="reviewtitle">Review feed</h1>
       <br />
-      {reviews.map((review) => (
-        <Row className="reviewfeed">
+      {reviews.map((review, index) => (
+        <Row key={index}className="reviewfeed">
           <Card id="reviewcard">
             <Card.Img
               variant="top"
@@ -34,7 +35,7 @@ const Feed = (props) => {
               <Card.Text>
                 {review.review} | Rating: {review.rating} out of 10
               </Card.Text>
-              <Button variant="primary">Add to shelf</Button>
+              <AddToShelf title={review.title} image={review.image} description={review.description} index={index} />
             </Card.Body>
           </Card>
         </Row>

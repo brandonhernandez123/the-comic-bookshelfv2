@@ -14,7 +14,7 @@ const Characters = () => {
     try {
       e.preventDefault()
       const res = await axios.get(
-        `${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=1`
+        `${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=3`
       )
       setSearchResults(res.data.results)
       toggleSearched(true)
@@ -37,6 +37,12 @@ const Characters = () => {
    } catch (error) {
      throw error
    }
+ }
+
+ function onClick(index){
+  
+
+  setModalShow(true, index)
  }
 
   console.log(searchResults)
@@ -64,15 +70,15 @@ const Characters = () => {
       <h4>Want to learn more about your favorite characters? Here is the place to do so!</h4>
       <div>
         {searchResults.map((hero, index) => (
-          <Container fluid>
+          <Container key={index} fluid>
             <Row className="herocard">
               <Col>
-                <h2>{hero.name}</h2>
+                <h2>{hero.name} {index}</h2>
                 <Image fluid src={hero.image.small_url} alt={hero.name} />
               </Col>
               <Col>
                 <p id="herodeck">{hero.deck}</p>
-                <Button variant="primary" onClick={() => setModalShow(true)}>
+                <Button variant="primary" onClick={() => console.log(index)}>
                   Read more about {hero.name}{' '}
                 </Button>
                 <CharModal

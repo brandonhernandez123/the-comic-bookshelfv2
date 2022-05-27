@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { SearchbyIssue, COMIC_VINE_API, format, MARVEL_COMIC_SEARCH, MARVEL_API, MARVEL_ORDERBY, MARVEL_COMIC_SEARCH_NODATE } from '../globals'
 import { Container, Card, Button } from 'react-bootstrap'
+import AddToShelf from '../components/AddToShelf'
 
 
 
@@ -72,7 +73,7 @@ const Comics = (props) => {
             throw error
         }
     }
-
+    let portrait = '/portrait_incredible.jpg'
     const setMarvelQuery = (e) => {
         setMarvelSearch(e.target.value)
     }
@@ -142,8 +143,7 @@ const Comics = (props) => {
                 <Card.Body className='comiccard'>
                   <Card.Title>Title:{comic.name} </Card.Title>
                   
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
+                  <AddToShelf title={comic.name} image={comic.image.small_url} description={comic.description} index={index} />                </Card.Body>
               </Card>
              
             </div>
@@ -155,7 +155,7 @@ const Comics = (props) => {
                 <Card.Body className='comiccard'>
                   <Card.Title>Title:{marvel.title} </Card.Title>
                   
-                  <Button variant="primary">Go somewhere</Button>
+                  <AddToShelf title={marvel.title} image={`${marvel.thumbnail.path}${portrait}`} description={marvel.description} index={index} />
                 </Card.Body>
               </Card>
 
