@@ -20,17 +20,19 @@ const Comics = (props) => {
     const [marvelEndDate, setMarvelEndDate] = useState(null)
     const getSearchResults = async (e) => {
         try {
-            e.preventDefault()
+            
             if (enddateQuery && startdateQuery != null) {
             const res = await axios.get(`${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery},cover_date:${startdateQuery}|${enddateQuery}&limit=50`)
             setSearchResults(res.data.results)
             toggleSearched(true)
             setSearchQuery('')
+            getMarvelComics([])
             } else {
                 const res = await axios.get(`${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=50`)
                 setSearchResults(res.data.results)
                 toggleSearched(true)
                 setSearchQuery('')
+                getMarvelComics([])
             }
             
         } catch (error) {

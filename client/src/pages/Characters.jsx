@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { CHARACTER_COMIC_VINE, COMIC_VINE_API, format } from '../globals'
 import { Row, Col, Container, Button, Image } from 'react-bootstrap'
@@ -9,7 +9,6 @@ const Characters = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [marvelCharacters, SetMarvel] = useState([])
   const getSearchResults = async (e) => {
     try {
       e.preventDefault()
@@ -28,16 +27,7 @@ const Characters = () => {
     setSearchQuery(e.target.value)
   }
 
- const getMarvel = async (event) => {
-   try {
-     event.preventDefault()
-     const res = await axios.get('https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-Man&orderBy=name&limit=10&apikey=411f30e793bd61e8cd96ac17f835698d')
-     SetMarvel(res.data.data.results)
 
-   } catch (error) {
-     throw error
-   }
- }
 
  function onClick(index){
   
@@ -45,8 +35,7 @@ const Characters = () => {
   setModalShow(true, index)
  }
 
-  console.log(searchResults)
-  console.log(marvelCharacters)
+ 
 
   return (
     <div className='characters'>
@@ -62,10 +51,7 @@ const Characters = () => {
         />
         <button id='charactersearchbutton'type="submit">Search</button>
       </form>
-      <form onSubmit={getMarvel}>
-
-        <button type='submit'>Marvel Characters</button>
-      </form>
+     
       
       <h4>Want to learn more about your favorite characters? Here is the place to do so!</h4>
       <div>
