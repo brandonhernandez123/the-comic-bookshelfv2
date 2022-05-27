@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { SignInUser } from '../services/auth'
 import { Nav } from 'react-bootstrap'
+import { withRouter } from "react-router";
 
 
 const Login = (props) => {
@@ -16,7 +17,7 @@ const Login = (props) => {
       setFormValues({ email: '', password: '' })
       props.setUser(payload)
       props.toggleAuthenticated(true)
-      props.history.push('/')
+     props.history.push('/')
     }
 
     console.log(formValues)

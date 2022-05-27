@@ -14,7 +14,15 @@ function App() {
     false || localStorage.getItem('authenticated')
   )
   const [user, setUser] = useState(null)
-  console.log('user:', user)
+  let userId = ''
+  const getId = (user, authenticated, userId) => {
+    if (authenticated === true) {
+      userId = user.id
+    } else {
+      return userId
+    }
+  }
+  getId()
   const handleLogOut = () => {
     //Reset all auth related state and clear localstorage
     setUser(null)
@@ -62,9 +70,33 @@ function App() {
                 />
               )}
             />
-            <Route exact path="/" component={Feed} />
-            <Route path="/characters" component={Characters} />
-            <Route path="/comics" component={Comics} />
+            <Route
+              exact
+              path="/"
+              component={Feed}
+              user={user}
+              authenticated={authenticated}
+            />
+            <Route
+              path="/characters"
+              component={Characters}
+              user={user}
+              authenticated={authenticated}
+            />
+            <Route
+              path="/comics"
+              component={(props) => (
+                <Comics
+                  {...props}
+                  user={user}
+                  authenticated={authenticated}
+                  userId={userId}
+                  setUser={setUser}
+                  checkToken={checkToken}
+                  toggleAuthenticated={toggleAuthenticated}
+                />
+              )}
+            />
           </Switch>
         </div>
       </Router>

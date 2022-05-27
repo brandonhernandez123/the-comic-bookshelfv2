@@ -3,12 +3,12 @@ import React, {useState} from 'react'
 import { BASE_URL } from '../globals'
 
 
-const AddToShelf = (props) => {
+const AddToShelf = ({title, description, image, user, authenticated, id, index}) => {
     const [postShelf, setShelf] = useState({
-        title: props.title,
-        description: props.description,
-        image: props.image,
-        userId: 1
+        title: title,
+        description: description,
+        image: image,
+        userId: id
     })
 
     const addComic = async () => {
@@ -21,11 +21,13 @@ const AddToShelf = (props) => {
             throw error
         }
     }
-    console.log(postShelf)
+   
     return(
         <div>
+       
 
-            <button type='submit' onClick={() => addComic(props.index)}>Add to shelf</button>
+            <button type='submit' onClick={() => addComic(index)}>Add to shelf</button>
+       
         </div>
     )
 }
