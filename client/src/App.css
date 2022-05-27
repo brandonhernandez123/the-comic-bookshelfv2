@@ -109,3 +109,17 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   color: white;
 }
 
+
+/* css for shelf page */
+#shelf{
+  background-image: url(https://wallpaperaccess.com/full/153062.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.shelfcontent{
+  background-color: darkred;
+  color: white;
+}

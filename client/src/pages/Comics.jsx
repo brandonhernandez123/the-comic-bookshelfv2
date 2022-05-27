@@ -29,6 +29,7 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
 
   const getSearchResults = async (e) => {
     try {
+      e.preventDefault()
       if (enddateQuery && startdateQuery != null) {
         const res = await axios.get(
           `${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery},cover_date:${startdateQuery}|${enddateQuery}&limit=50`
@@ -36,7 +37,7 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         setSearchResults(res.data.results)
         toggleSearched(true)
         setSearchQuery('')
-        getMarvelComics([])
+        
       } else {
         const res = await axios.get(
           `${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=50`
@@ -44,7 +45,7 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         setSearchResults(res.data.results)
         toggleSearched(true)
         setSearchQuery('')
-        getMarvelComics([])
+        
       }
     } catch (error) {
       alert('could not find a comic with that name')
@@ -160,7 +161,7 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
               <Card.Img variant="top" src={comic.image.small_url} />
               <Card.Body className="comiccard">
                 <Card.Title>Title:{comic.name} </Card.Title>
-               <AddToShelf
+                {authenticated && user ? (<AddToShelf
                   title={comic.name}
                   image={comic.image.small_url}
                   description={comic.description}
@@ -168,10 +169,9 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
                   user={user}
                   id={user.id}
                   authenticated={authenticated}
-                  setUser={setUser}
-                checkToken={checkToken}
-                toggleAuthenticated={toggleAuthenticated}
-                />) 
+                
+                /> ) : <p>Sign in to add comics to shelf</p>}
+               
                 
               </Card.Body>
             </Card>

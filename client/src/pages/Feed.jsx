@@ -14,7 +14,7 @@ const Feed = (props) => {
     }
     Reviews()
   }, [])
-
+  console.log(props.user)
   return (
     <Container fluid className="feed">
       <h1 className="reviewtitle">Review feed</h1>
@@ -35,7 +35,8 @@ const Feed = (props) => {
               <Card.Text>
                 {review.review} | Rating: {review.rating} out of 10
               </Card.Text>
-              <AddToShelf title={review.title} image={review.image} description={review.description} index={index} />
+              {props.authenticated && props.user ? ( <AddToShelf title={review.title} image={review.image} description={review.description} user={props.user} authenticated={props.authenticated} id={props.user.id} index={index} />) : (<p>Sign in to add to shelf</p>)}
+             
             </Card.Body>
           </Card>
         </Row>

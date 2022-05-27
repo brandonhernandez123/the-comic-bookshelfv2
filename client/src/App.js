@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import { useState, useEffect, useCallback } from 'react'
 import { CheckSession } from './services/auth'
+import Shelf from './pages/Shelf'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -73,9 +74,9 @@ function App() {
             <Route
               exact
               path="/"
-              component={Feed}
-              user={user}
-              authenticated={authenticated}
+              component={(props) => (
+                <Feed {...props} user={user} authenticated={authenticated} />
+              )}
             />
             <Route
               path="/characters"
@@ -95,6 +96,12 @@ function App() {
                   checkToken={checkToken}
                   toggleAuthenticated={toggleAuthenticated}
                 />
+              )}
+            />
+            <Route
+              path="/shelf"
+              component={(props) => (
+                <Shelf {...props} user={user} authenticated={authenticated} />
               )}
             />
           </Switch>
