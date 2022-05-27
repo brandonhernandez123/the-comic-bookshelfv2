@@ -21,7 +21,7 @@ const NewUser = async (req, res) => {
 async function GetOneUser(req, res) {
   try {
     const users = await Users.findByPk(req.params.user_id, {
-      attributes: ['username', 'email'],
+      attributes: ['username', 'email', 'password_digest'],
       include: [
         {
           model: myComics
