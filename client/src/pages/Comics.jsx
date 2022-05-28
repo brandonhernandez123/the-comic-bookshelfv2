@@ -9,7 +9,7 @@ import {
   MARVEL_ORDERBY,
   MARVEL_COMIC_SEARCH_NODATE
 } from '../globals'
-import { Container, Card, Button } from 'react-bootstrap'
+import { Container, Card, Button, Row, Col } from 'react-bootstrap'
 import AddToShelf from '../components/AddToShelf'
 
 const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated}) => {
@@ -156,7 +156,8 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
       </form>
       <Container className="grid" fluid>
         {searchResults.map((comic, index) => (
-          <div className="comiccard">
+          <Row>
+            <Col className='shelfcard'>
             <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src={comic.image.small_url} />
               <Card.Body className="comiccard">
@@ -175,10 +176,12 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
                 
               </Card.Body>
             </Card>
-          </div>
+            </Col>
+          </Row>
         ))}
         {getMarvelComics.map((marvel, index) => (
-          <div>
+          <Row>
+            <Col className='comicsgrid'>
             <Card style={{ width: '18rem' }}>
               <Card.Img
                 variant="top"
@@ -196,7 +199,8 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
                
               </Card.Body>
             </Card>
-          </div>
+            </Col>
+          </Row>
         ))}
       </Container>
     </div>

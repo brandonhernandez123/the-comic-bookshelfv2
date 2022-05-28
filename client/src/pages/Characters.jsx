@@ -13,7 +13,7 @@ const Characters = () => {
     try {
       e.preventDefault()
       const res = await axios.get(
-        `${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=3`
+        `${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=15`
       )
       setSearchResults(res.data.results)
       toggleSearched(true)
@@ -29,11 +29,10 @@ const Characters = () => {
 
 
 
- function onClick(index){
+
   
 
-  setModalShow(true, index)
- }
+ 
 
  
 
@@ -59,21 +58,12 @@ const Characters = () => {
           <Container key={index} fluid>
             <Row className="herocard">
               <Col>
-                <h2>{hero.name} {index}</h2>
-                <Image fluid src={hero.image.small_url} alt={hero.name} />
+                <h2>{hero.name}</h2>
+                <Image fluid height={300} width={250} src={hero.image.small_url} alt={hero.name} />
               </Col>
               <Col>
                 <p id="herodeck">{hero.deck}</p>
-                <Button variant="primary" onClick={() => console.log(index)}>
-                  Read more about {hero.name}{' '}
-                </Button>
-                <CharModal
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
-                  name={hero.name}
-                  description={hero.description}
-                  image={hero.image.screen_url}
-                />
+                <div className='herodescription' dangerouslySetInnerHTML={{ __html: hero.description }} />
                 
                 
               </Col>

@@ -68,7 +68,7 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 
 .characters{
   background-image: url(https://i.pinimg.com/736x/8f/85/4e/8f854e5acdd706798ffb5f2cd7551cc3.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   height: 100vh;
   color: white;
@@ -95,12 +95,9 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   height: 100vh;
 }
 
-.grid {
+.comicsgrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
-  grid-gap: 1em;
-  padding: 0.5em;
-  text-align: center;
+  grid-template-rows: auto;
   
 }
 
@@ -122,4 +119,53 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 .shelfcontent{
   background-color: darkred;
   color: white;
+}
+
+.shelfcard{
+  background-color: darkred;
+  color: white;
+  height: 50%;
+  display: grid;
+}
+
+#description{
+  overflow: scroll;
+  height: 200px;
+  background-color: darkred;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: darkred; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.herodescription{
+  overflow: scroll;
+  height: 400px;
+  width: 600px;
+}
+
+@media screen and (max-width: 500px) {
+  .herodescription{
+    overflow: scroll;
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
