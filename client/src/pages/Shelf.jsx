@@ -18,20 +18,21 @@ const Shelf = (props) => {
         }
         fetchProfile()
     },[] )
-    console.log(getProfile)
     return(
+    <div>  
+        <h2 className='shelfcontent'>Welcome to your shelf {getProfile.username}</h2>
         <Container fluid id='shelf'>
             
-            <h2 className='shelfcontent'>Welcome to your shelf {getProfile.username}</h2>
+            
             <Row>
                 {myComics.map((comic, index) => (
                  <Col className='shelfcard'>
-                    
-                    <div>
-                        <h4>{comic.title}</h4>
-                        <img src={comic.image} alt={comic.title} height={300} width={200} />
+                    {myComics.length <= 0 ? ( <h2 color='white'>You do not have any comics in your shelf.</h2>) : (<div>
+                        <h4 className='shelftitle'>{comic.title}</h4>
+                        <img src={comic.image} alt={comic.title} height={450} width={300} />
                         <p id='description'>Description: {comic.description}</p>
-                    </div>
+                    </div>)}
+                   
                 </Col>  
                 ))}
                 
@@ -39,6 +40,7 @@ const Shelf = (props) => {
             </Row>
           
         </Container>
+        </div>
     )
 }
 

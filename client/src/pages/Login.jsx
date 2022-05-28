@@ -12,21 +12,25 @@ const Login = (props) => {
     }
   
     const handleSubmit = async (e) => {
-      e.preventDefault()
-      const payload = await SignInUser(formValues)
-      setFormValues({ email: '', password: '' })
-      props.setUser(payload)
-      props.toggleAuthenticated(true)
-     props.history.push('/')
+     try {
+          e.preventDefault()
+          const payload = await SignInUser(formValues)
+          setFormValues({ email: '', password: '' })
+          props.setUser(payload)
+          props.toggleAuthenticated(true)
+          alert('Login Successfull')
+          props.history.push('/')
+     } catch (error) {
+         alert('login unsucessfull, please try again')
+     }
     }
 
-    console.log(formValues)
 
 
     return(
 <div>
     <h2>Welcome to The ComicBook shelf</h2>
-    <p> Not Signed up yet? click <Nav.Link href='/register'>Here</Nav.Link> </p>
+   
         
 <div className='login'>
     <h2>Sign in</h2>

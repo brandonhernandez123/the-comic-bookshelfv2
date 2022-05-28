@@ -4,9 +4,9 @@
 }
 
 /* css for navbar */
-.navbar{
-  background: rgb(117,17,17) !important;
-background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgba(119,7,7,1) 95%) !important;
+.navbar {
+  background: rgb(117, 17, 17) !important;
+  background: linear-gradient(180deg, rgba(117, 17, 17, 1) 0%, rgba(0, 0, 0, 1) 48%, rgba(119, 7, 7, 1) 95%) !important;
   color: white !important;
 }
 
@@ -14,13 +14,15 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 
 .feed {
   background-image: url(https://wallpaperaccess.com/full/229965.jpg);
-  
+
 }
+
 #reviewcard {
-  background: rgb(117,17,17) !important;
-background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgba(119,7,7,1) 95%) !important;
+  background: rgb(117, 17, 17) !important;
+  background: linear-gradient(180deg, rgba(117, 17, 17, 1) 0%, rgba(0, 0, 0, 1) 48%, rgba(119, 7, 7, 1) 95%) !important;
   color: white;
 }
+
 @media screen and (min-width: 600px) {
   #reviewcard {
     height: 1050px !important;
@@ -29,14 +31,14 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   }
 }
 
-.reviewtitle{
+.reviewtitle {
   color: white;
-  background: rgb(117,17,17) !important;
-background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgba(119,7,7,1) 95%) !important;
+  background: rgb(117, 17, 17) !important;
+  background: linear-gradient(180deg, rgba(117, 17, 17, 1) 0%, rgba(0, 0, 0, 1) 48%, rgba(119, 7, 7, 1) 95%) !important;
   width: 100%;
 }
 
-.herocard{
+.herocard {
   border: 2px solid black;
   color: white;
   background-color: brown;
@@ -44,29 +46,29 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 
 }
 
-#herodeck{
+#herodeck {
   margin: 50px auto;
 }
 
 .charmodal {
   overflow: scroll;
-  
+
 }
 
-.charinfo{
+.charinfo {
   background-color: black;
   color: white;
   overflow: scroll;
   font-family: 'Bangers', cursive;
 }
 
-.chartitle{
+.chartitle {
   background-color: black;
   color: white;
   font-family: 'Bangers', cursive;
 }
 
-.characters{
+.characters {
   background-image: url(https://i.pinimg.com/736x/8f/85/4e/8f854e5acdd706798ffb5f2cd7551cc3.jpg);
   background-repeat: repeat;
   background-size: cover;
@@ -74,14 +76,14 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
   color: white;
 }
 
-#charactersearch{
+#charactersearch {
   width: 300px;
   border-radius: 150px;
   color: black;
   background-color: white;
 }
 
-#charactersearchbutton{
+#charactersearchbutton {
   width: 100px;
   border-radius: 50px;
   background: white;
@@ -89,7 +91,7 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 
 
 /* css for comics page */
-.comicpage{
+.comicpage {
   background-color: black;
   color: white;
   height: 100vh;
@@ -98,40 +100,55 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 .comicsgrid {
   display: grid;
   grid-template-rows: auto;
-  
+
 }
 
-.comiccard{
+.comiccard {
   background-color: black;
   color: white;
 }
 
 
 /* css for shelf page */
-#shelf{
+#shelf {
   background-image: url(https://wallpaperaccess.com/full/153062.jpg);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
   height: 100vh;
-}
-
-.shelfcontent{
-  background-color: darkred;
-  color: white;
-}
-
-.shelfcard{
-  background-color: darkred;
-  color: white;
-  height: 50%;
   display: grid;
+  row-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: darkred;
+  padding: 10px;
 }
 
-#description{
+.shelfcontent {
+  background-color: darkred;
+  color: white;
+}
+
+.shelfcard {
+  background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
+
+  background-color: rgba(0, 0, 0, .5);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  text-align: center;
+}
+
+#description {
   overflow: scroll;
   height: 200px;
-  background-color: darkred;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  width: 300px;
+  margin: 0 auto;
+}
+.shelftitle{
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
 }
 
 /* width */
@@ -141,31 +158,40 @@ background: linear-gradient(180deg, rgba(117,17,17,1) 0%, rgba(0,0,0,1) 48%, rgb
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: darkred; 
+  background: darkred;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: red; 
+  background: red;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 
-.herodescription{
+.herodescription {
   overflow: scroll;
   height: 400px;
   width: 600px;
 }
 
 @media screen and (max-width: 500px) {
-  .herodescription{
+  .herodescription {
     overflow: scroll;
     height: 400px;
     width: 80%;
     margin: 0 auto;
+  }
+
+  #shelf {
+    background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
+    background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
+    background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
+
+    
+    background-size: cover;
   }
 }
