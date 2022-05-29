@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import { SignInUser } from '../services/auth'
 import { Nav } from 'react-bootstrap'
-import { withRouter } from "react-router";
+import {useHistory} from 'react-router'
 
 
 const Login = (props) => {
     const [formValues, setFormValues] = useState({ email: '', password: '' })
+
+    const history = useHistory()
 
     const handleChange = (e) => {
       setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -19,7 +21,7 @@ const Login = (props) => {
           props.setUser(payload)
           props.toggleAuthenticated(true)
           alert('Login Successfull')
-          props.history.push('/')
+          history.push('/')
      } catch (error) {
          alert('login unsucessfull, please try again')
      }
