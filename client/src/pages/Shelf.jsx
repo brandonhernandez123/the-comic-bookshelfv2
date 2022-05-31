@@ -43,7 +43,7 @@ const Shelf = (props) => {
                     <Accordion.Item eventKey="0">
                       <Accordion.Header>Review this comic</Accordion.Header>
                       <Accordion.Body>
-                        <ReviewForm />
+                        <ReviewForm user={props.user} image={comic.image} description={comic.description} title={comic.title} index={comic.index} />
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>
