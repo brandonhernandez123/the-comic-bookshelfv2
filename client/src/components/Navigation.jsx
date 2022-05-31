@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 
 const Navigation = ({ authenticated, user, handleLogOut }) => {
   return (
-    <Navbar collapseOnSelect expand="lg" fixed="bottom" id="navbar">
+    <Navbar collapseOnSelect expand="lg" fixed="top" id="navbar">
       <Container>
         <Navbar.Brand style={{ color: 'white' }} href="/">
           The Comic Bookshelf

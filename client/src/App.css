@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
   font-family: 'Bangers', cursive;
@@ -5,8 +9,8 @@
 
 /* css for navbar */
 .navbar {
-  background: rgb(117, 17, 17) !important;
-  background: linear-gradient(180deg, rgba(117, 17, 17, 1) 0%, rgba(0, 0, 0, 1) 48%, rgba(119, 7, 7, 1) 95%) !important;
+  background: rgb(226, 64, 64) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;
   color: white !important;
 }
 
@@ -129,7 +133,7 @@
 }
 
 .shelfcard {
-  background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
+  background-image: url(https://data.whicdn.com/images/326399109/original.jpg);
 
   background-color: rgba(0, 0, 0, .5);
   color: black;
@@ -139,7 +143,7 @@
 }
 
 #description {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 200px;
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
@@ -153,7 +157,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 1px;
 }
 
 /* Track */
@@ -194,4 +198,18 @@
     
     background-size: cover;
   }
+}
+
+#reviewbtn{
+  opacity: 0;
+}
+
+.shelfcard:hover{
+  background: rgb(226, 64, 64) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;
+}
+
+  #reviewbtn:hover{
+  opacity: 1;
+  
 }
