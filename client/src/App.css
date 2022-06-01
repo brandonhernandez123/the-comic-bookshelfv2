@@ -115,7 +115,7 @@ body{
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
-  height: 100vh;
+  height: max-content;
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto;
@@ -251,3 +251,31 @@ body{
 #accordion{
   background: rgb(226, 64, 64) !important;
   background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;}
+
+  .shelfreview{
+    width: 100%;
+    height: max-content;
+    background: rgb(215, 215, 220) !important;
+    background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+  display: grid;
+  row-gap: 50px;
+  grid-template-columns: auto  ;
+  padding: 10px;
+  color: white;
+  }
+
+  .reviewcard {
+    background-image: url(https://www.verdict.co.uk/wp-content/uploads/2017/09/get-into-comic-books-1038x778.jpg);
+  
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .reviewcard:hover{
+    background: rgb(215, 215, 220) !important;
+    background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+    background-image: none;
+  }

@@ -26,7 +26,7 @@ const Feed = (props) => {
               variant="top"
               src={review.image}
               height={800}
-              width={360}
+              width={250}
             />
             <Card.Body>
               <Card.Title>

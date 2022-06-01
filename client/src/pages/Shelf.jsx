@@ -7,6 +7,7 @@ import ReviewForm from '../components/ReviewForm'
 const Shelf = (props) => {
   const [getProfile, setProfile] = useState([])
   const [myComics, setMyComics] = useState([])
+  const [myReviews, setMyReviews] = useState([])
 
   // Method for getting profile info username, email.
   useEffect(() => {
@@ -14,9 +15,11 @@ const Shelf = (props) => {
       const res = await axios.get(`${BASE_URL}/profile/${props.user.id}`)
       setProfile(res.data)
       setMyComics(res.data.myComics)
+      setMyReviews(res.data.reviewedComics)
     }
     fetchProfile()
   }, [])
+  console.log(myReviews)
 
 //   delete Method for Comics in shelf
 
@@ -35,7 +38,8 @@ const RemoveComic = async(index) => {
     <div>
         <br/>
         <br/>
-       <br/>
+        <br/>
+       
        
       <h2 className="shelfcontent">
         Welcome to your shelf {getProfile.username}
@@ -71,7 +75,33 @@ const RemoveComic = async(index) => {
             </Col>
           ))}
         </Row>
+      
+            
+       
+      </Container> 
+     
+      <br/>
+     
+     
+        
+      <Container fluid className='shelfreview'>
+          <h1 color="white" >My Reviews</h1> 
+          <Row>
+ {myReviews.map((review, index) => (
+       
+                <Col className='reviewcard'> 
+                
+               <h3 className='shelftitle'>{review.title}</h3>
+                <img width={200} height={300} src={review.image} />
+                <p id='description'>{review.review} /n Rating: {review.rating} out of 10</p>
+                
+                </Col>
+            ))}
+        </Row>
       </Container>
+            
+           
+           
     </div>
   )
 }

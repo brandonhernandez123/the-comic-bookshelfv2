@@ -19,9 +19,10 @@ const Navigation = ({ authenticated, user, handleLogOut }) => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link style={{ color: 'white' }} href="/shelf">
+            {authenticated && user ? (<Nav.Link style={{ color: 'white' }} href="/shelf">
               My Shelf
-            </Nav.Link>
+            </Nav.Link>) : null}
+            
           </Nav>
           <Nav>
             {

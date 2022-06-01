@@ -20,6 +20,7 @@ const Login = (props) => {
           setFormValues({ email: '', password: '' })
           props.setUser(payload)
           props.toggleAuthenticated(true)
+          window.location.reload(true)
         } catch (error) {
          alert('login unsucessfull, please try again')
      }
