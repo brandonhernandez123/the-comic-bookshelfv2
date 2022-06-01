@@ -101,11 +101,7 @@ body{
   height: 100vh;
 }
 
-.comicsgrid {
-  display: grid;
-  grid-template-rows: auto;
 
-}
 
 .comiccard {
   background-color: black;
@@ -212,4 +208,29 @@ body{
   #reviewbtn:hover{
   opacity: 1;
   
+}
+
+#comicpage{
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  row-gap: 50px;
+  grid-template-columns: auto auto auto auto;
+  background-color: darkred;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  #comicpage{
+    height: 100vh;
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: auto auto;
+    background-color: darkred;
+    padding: 10px;
+  }
+  body {
+    width: 100%;
+  }
 }

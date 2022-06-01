@@ -1,6 +1,11 @@
 import './App.css'
 import Navigation from './components/Navigation'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 import Feed from './pages/Feed'
 import Characters from './pages/Characters'
 import Comics from './pages/Comics'
@@ -60,24 +65,23 @@ function App() {
           <Switch>
             <Route exact path="/register" component={Register} />
 
-            <Route
-              exact
-              path="/login"
-              component={(props) => (
+            <Route exact path="/login">
+              {authenticated && user ? (
+                <Redirect to="/" />
+              ) : (
                 <Login
-                  {...props}
                   setUser={setUser}
                   toggleAuthenticated={toggleAuthenticated}
                 />
               )}
-            />
-            <Route
-              exact
-              path="/"
-              component={(props) => (
-                <Feed {...props} user={user} authenticated={authenticated} />
+            </Route>
+            <Route exact path="/">
+              {!authenticated && !user ? (
+                <Redirect to="/login" />
+              ) : (
+                <Feed user={user} authenticated={authenticated} />
               )}
-            />
+            </Route>
             <Route
               path="/characters"
               component={Characters}

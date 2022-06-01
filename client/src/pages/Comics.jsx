@@ -22,7 +22,6 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
   const [marvelSearch, setMarvelSearch] = useState('')
   const [marvelStartDate, setMarvelStartDate] = useState(null)
   const [marvelEndDate, setMarvelEndDate] = useState(null)
-  const {userId, setUserId} = useState(null)
   console.log('authenticated', authenticated, 'user:', user)
   
   
@@ -65,10 +64,6 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
     setEndDateQuery(e.target.value)
   }
 
-  console.log(searchQuery)
-  console.log(searchResults)
-  console.log(startdateQuery)
-  console.log(enddateQuery)
 
   // MARVEL SEARCH
   const FetchMarvel = async (e) => {
@@ -105,11 +100,10 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
     setMarvelEndDate(e.target.value)
   }
 
-  console.log('getmarvelcomics', getMarvelComics)
 
   return (
     <div className="comicpage">
-      <h1>Hello World</h1>
+      <h1>Search Comics to add to your Shelf</h1>
       <form onSubmit={getSearchResults}>
         <input
           type="text"
@@ -154,11 +148,11 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         />
         <button type="submit">Search Marvel Comics</button>
       </form>
-      <Container className="grid" fluid>
+      <Container id="comicpage" fluid>
         {searchResults.map((comic, index) => (
           <Row>
             <Col className='shelfcard'>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '10rem' }}>
               <Card.Img variant="top" src={comic.image.small_url} />
               <Card.Body className="comiccard">
                 <Card.Title>Title:{comic.name} </Card.Title>
@@ -181,8 +175,8 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         ))}
         {getMarvelComics.map((marvel, index) => (
           <Row>
-            <Col className='comicsgrid'>
-            <Card style={{ width: '18rem' }}>
+            <Col className='shelfcard'>
+            <Card style={{ width: '10rem' }}>
               <Card.Img
                 variant="top"
                 src={`${marvel.thumbnail.path}/portrait_incredible.jpg`}
