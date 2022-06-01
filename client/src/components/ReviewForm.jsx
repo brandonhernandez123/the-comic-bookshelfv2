@@ -38,10 +38,10 @@ const ReviewForm = (props) => {
     return(
         <div>
             <form onSubmit={() => onClick(props.index)}>
-                <input type='text' required placeholder='Write review' name='review'  onChange={handleChangeReview} />
+                <input type='text' required placeholder='Write review' name='review' id='reviewform'  onChange={handleChangeReview} />
                 <label for="rating">Rating (between 0 and 10):</label>
                 <input type='range' min={0} max={10} placeholder='Rate out of 10' name='rating'   onChange={handleChangeRating} />
-                <button type='submit' />
+                <button id='submitbtn' type='submit' placeholder='submit'>Submit  </button>
             </form>
         </div>
     )

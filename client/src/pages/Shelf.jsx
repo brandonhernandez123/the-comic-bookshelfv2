@@ -17,8 +17,26 @@ const Shelf = (props) => {
     }
     fetchProfile()
   }, [])
+
+//   delete Method for Comics in shelf
+
+const RemoveComic = async(index) => {
+    try {
+        let id = `${myComics[index].id}`
+        await axios.delete(`${BASE_URL}/deletecomic/${id}`)
+        alert('Comic removed from shelf')
+       window.location.reload()
+    } catch (error) {
+        throw error
+    }
+}
+
   return (
     <div>
+        <br/>
+        <br/>
+       <br/>
+       
       <h2 className="shelfcontent">
         Welcome to your shelf {getProfile.username}
       </h2>
@@ -39,10 +57,11 @@ const Shelf = (props) => {
                   />
 
                   <p id="description">Description: {comic.description}</p>
-                  <Accordion defaultActiveKey="1">
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header>Review this comic</Accordion.Header>
-                      <Accordion.Body>
+                  <button onClick={() => RemoveComic(index)}>Remove Comic</button>
+                  <Accordion className='bg-danger' id='accordion' defaultActiveKey="1">
+                    <Accordion.Item id='accordion' eventKey="0">
+                      <Accordion.Header id='accordion'>Review this comic</Accordion.Header>
+                      <Accordion.Body id='accordion'>
                         <ReviewForm user={props.user} image={comic.image} description={comic.description} title={comic.title} index={comic.index} />
                       </Accordion.Body>
                     </Accordion.Item>

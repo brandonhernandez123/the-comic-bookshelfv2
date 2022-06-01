@@ -234,3 +234,20 @@ body{
     width: 100%;
   }
 }
+
+#reviewform{
+  height: 80px;
+  width: 100%;
+  border: 1px solid black !important;
+}
+
+#submitbtn{
+  width: 80px;
+  height: 25px;
+  color: white;
+  background-color: darkred;
+}
+
+#accordion{
+  background: rgb(226, 64, 64) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;}
