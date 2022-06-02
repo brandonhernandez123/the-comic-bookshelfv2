@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { SignInUser } from '../services/auth'
 import { Nav } from 'react-bootstrap'
 import {useHistory} from 'react-router-dom'
+import { Form, Button } from 'react-bootstrap'
 
 
 const Login = (props) => {
@@ -34,15 +35,31 @@ const Login = (props) => {
    
         
 <div className='login'>
-    <h2>Sign in</h2>
-    <form className='form' onSubmit={handleSubmit}>
-        
-    <input type="email" name='email' onChange={handleChange} value={formValues.email}  placeholder="Email"/>
    
-    <input type="password" name='password' value={formValues.password} onChange={handleChange} placeholder="Password"/>
-    <button disabled={!formValues.email || !formValues.password}> Sign in </button>
-    </form>
-   <p> Not Signed up yet? click <Nav.Link href='/register'>Here</Nav.Link> </p>
+    <Form className='loginform' onSubmit={handleSubmit}> 
+    <h2>Sign in</h2>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" name='email'  onChange={handleChange} value={formValues.email} />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" name='password' value={formValues.password} onChange={handleChange}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button disabled={!formValues.email || !formValues.password} variant="primary" type="submit">
+    Sign in
+  </Button> 
+  <p> Not Signed up yet? click <Nav.Link href='/register'>Here</Nav.Link> </p>
+</Form>
+  
+  
 </div>
 </div>
     )

@@ -48,7 +48,7 @@ const Shelf = (props) => {
   }
 
   return (
-    <div>
+    <div className='shelfwhole'>
       <br />
       <br />
       <br />
