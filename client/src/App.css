@@ -111,12 +111,23 @@ body{
 
 
 /* css for shelf page */
+.shelfwhole{
+   background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+  height: 100%;
+  background-size: cover;
+  
+}
+
+
+
+
 #shelf {
-  /* background-image: url(https://wallpaperaccess.com/full/153062.jpg); */
+  /* background-image: url(https://wallpaperaccess.com/full/153062.jpg);
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
-  height: max-content;
+  height: max-content; */
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto;
@@ -130,9 +141,9 @@ body{
 }
 
 .shelfcard {
-  /* background-image: url(https://data.whicdn.com/images/326399109/original.jpg);
+  background-image: url(https://data.whicdn.com/images/326399109/original.jpg);
 
-  background-color: rgba(0, 0, 0, .5); */
+  background-color: rgba(0, 0, 0, .5);
   color: black;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 10px;
@@ -312,5 +323,5 @@ body{
 .shelfwhole{
   background: rgb(215, 215, 220) !important;
     background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
-    height: 100vh;
+    height: 100%;
 }
