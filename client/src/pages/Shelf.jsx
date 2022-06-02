@@ -36,6 +36,17 @@ const Shelf = (props) => {
     }
   }
 
+  const RemoveReview = async (index) => {
+    try {
+      let id = `${myReviews[index].id}`
+      await axios.delete(`${BASE_URL}/deletereview/${id}`)
+      alert('Review removed from shelf')
+      window.location.reload()
+    } catch (error) {
+      throw error
+    }
+  }
+
   return (
     <div>
       <br />
@@ -104,6 +115,9 @@ const Shelf = (props) => {
               <p id="description">
                 {review.review} /n Rating: {review.rating} out of 10
               </p>
+              <button onClick={() => RemoveReview(index)}>
+                    Delete Review
+                  </button>
               <Accordion
                 className="bg-danger"
                 id="accordion"
