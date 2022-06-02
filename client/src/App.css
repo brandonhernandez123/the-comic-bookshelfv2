@@ -96,7 +96,8 @@ body{
 
 /* css for comics page */
 .comicpage {
-  background-color: black;
+  
+  background-image: url(https://wallpaperaccess.com/full/96121.jpg);
   color: white;
   height: 100vh;
 }
@@ -216,7 +217,10 @@ body{
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto auto;
-  background-color: darkred;
+  background-image: url(https://wallpaperaccess.com/full/96121.jpg);  
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat-x;
   padding: 10px;
 }
 

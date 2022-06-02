@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import {
   SearchbyIssue,
@@ -9,8 +9,9 @@ import {
   MARVEL_ORDERBY,
   MARVEL_COMIC_SEARCH_NODATE
 } from '../globals'
-import { Container, Card, Button, Row, Col } from 'react-bootstrap'
+import { Container, Card, Button, Row, Col, Accordion } from 'react-bootstrap'
 import AddToShelf from '../components/AddToShelf'
+import ComicSearch from '../components/ComicSearch'
 
 const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated}) => {
   const [searchResults, setSearchResults] = useState([])
@@ -101,10 +102,38 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
   }
 
 
+
+
+
+//Accordion
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="comicpage">
       <h1>Search Comics to add to your Shelf</h1>
-      <form onSubmit={getSearchResults}>
+      <Row>
+       
+
+      
+        <Accordion defaultActiveKey="0">
+      <Card>
+        <Card.Header>
+          <ComicSearch eventKey="0">Search DC, DarkHorse Etc</ComicSearch>
+        </Card.Header>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>
+
+ <Col>
+        <form onSubmit={getSearchResults}>
         <input
           type="text"
           placeholder="search comics"
@@ -126,7 +155,19 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         />
         <button type="submit">Search</button>
       </form>
-      <form onSubmit={FetchMarvel}>
+        </Col>
+
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+      <Card>
+        <Card.Header>
+          <ComicSearch eventKey="1">Search Marvel Comics</ComicSearch>
+        </Card.Header>
+        <Accordion.Collapse eventKey="1">
+          <Card.Body>
+  <Col>
+         <form onSubmit={FetchMarvel}>
         <input
           type="text"
           placeholder="search comics"
@@ -148,6 +189,18 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         />
         <button type="submit">Search Marvel Comics</button>
       </form>
+        
+        </Col>
+
+
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
+
+      </Row>
+      
+     
       <Container id="comicpage" fluid>
         {searchResults.map((comic, index) => (
           <Row>
