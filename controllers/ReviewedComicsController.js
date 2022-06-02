@@ -40,11 +40,11 @@ const deleteReview = async (req, res) => {
 
 const updateReview = async (req, res) => {
   try {
-    const update = await reviewedComics.update({
-      where: { id: req.params.review_id },
-      returning: true
-    })
-    res.send(update)
+    const review = await reviewedComics.update(
+      { ...req.body },
+      { where: { id: req.params.review_id }, returning: true }
+    )
+    res.send(review)
   } catch (error) {
     throw error
   }

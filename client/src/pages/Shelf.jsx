@@ -3,11 +3,13 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 import { Container, Row, Col, Accordion } from 'react-bootstrap'
 import ReviewForm from '../components/ReviewForm'
+import UpdateReview from '../components/UpdateReview'
 
 const Shelf = (props) => {
   const [getProfile, setProfile] = useState([])
   const [myComics, setMyComics] = useState([])
   const [myReviews, setMyReviews] = useState([])
+  const [modalShow, setModalShow] = useState(false)
 
   // Method for getting profile info username, email.
   useEffect(() => {
@@ -21,26 +23,25 @@ const Shelf = (props) => {
   }, [])
   console.log(myReviews)
 
-//   delete Method for Comics in shelf
+  //   delete Method for Comics in shelf
 
-const RemoveComic = async(index) => {
+  const RemoveComic = async (index) => {
     try {
-        let id = `${myComics[index].id}`
-        await axios.delete(`${BASE_URL}/deletecomic/${id}`)
-        alert('Comic removed from shelf')
-       window.location.reload()
+      let id = `${myComics[index].id}`
+      await axios.delete(`${BASE_URL}/deletecomic/${id}`)
+      alert('Comic removed from shelf')
+      window.location.reload()
     } catch (error) {
-        throw error
+      throw error
     }
-}
+  }
 
   return (
     <div>
-        <br/>
-        <br/>
-        <br/>
-       
-       
+      <br />
+      <br />
+      <br />
+
       <h2 className="shelfcontent">
         Welcome to your shelf {getProfile.username}
       </h2>
@@ -61,12 +62,26 @@ const RemoveComic = async(index) => {
                   />
 
                   <p id="description">Description: {comic.description}</p>
-                  <button onClick={() => RemoveComic(index)}>Remove Comic</button>
-                  <Accordion className='bg-danger' id='accordion' defaultActiveKey="1">
-                    <Accordion.Item id='accordion' eventKey="0">
-                      <Accordion.Header id='accordion'>Review this comic</Accordion.Header>
-                      <Accordion.Body id='accordion'>
-                        <ReviewForm user={props.user} image={comic.image} description={comic.description} title={comic.title} index={comic.index} />
+                  <button onClick={() => RemoveComic(index)}>
+                    Remove Comic
+                  </button>
+                  <Accordion
+                    className="bg-danger"
+                    id="accordion"
+                    defaultActiveKey="1"
+                  >
+                    <Accordion.Item id="accordion" eventKey="0">
+                      <Accordion.Header id="accordion">
+                        Review this comic
+                      </Accordion.Header>
+                      <Accordion.Body id="accordion">
+                        <ReviewForm
+                          user={props.user}
+                          image={comic.image}
+                          description={comic.description}
+                          title={comic.title}
+                          index={comic.index}
+                        />
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>
@@ -75,33 +90,46 @@ const RemoveComic = async(index) => {
             </Col>
           ))}
         </Row>
-      
-            
-       
-      </Container> 
-     
-      <br/>
-     
-     
-        
-      <Container fluid className='shelfreview'>
-          <h1 color="white" >My Reviews</h1> 
-          <Row>
- {myReviews.map((review, index) => (
-       
-                <Col className='reviewcard'> 
-                
-               <h3 className='shelftitle'>{review.title}</h3>
-                <img width={200} height={300} src={review.image} />
-                <p id='description'>{review.review} /n Rating: {review.rating} out of 10</p>
-                
-                </Col>
-            ))}
+      </Container>
+
+      <br />
+
+      <Container fluid className="shelfreview">
+        <h1 color="white">My Reviews</h1>
+        <Row>
+          {myReviews.map((review, index) => (
+            <Col className="reviewcard">
+              <h3 className="shelftitle">{review.title}</h3>
+              <img width={200} height={300} src={review.image} />
+              <p id="description">
+                {review.review} /n Rating: {review.rating} out of 10
+              </p>
+              <Accordion
+                className="bg-danger"
+                id="accordion"
+                defaultActiveKey="1"
+              >
+                <Accordion.Item id="accordion" eventKey="0">
+                  <Accordion.Header id="accordion">
+                    Update your review
+                  </Accordion.Header>
+                  <Accordion.Body id="accordion">
+                    <UpdateReview
+                      title={review.title}
+                      index={review.index}
+                      image={review.image}
+                      description={review.description}
+                      review={review.review}
+                      rating={review.rating}
+                      id={review.id}
+                    />
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+          ))}
         </Row>
       </Container>
-            
-           
-           
     </div>
   )
 }
