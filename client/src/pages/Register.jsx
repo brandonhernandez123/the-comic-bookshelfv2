@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {RegisterUser} from '../services/auth'
-import { Button } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import {useHistory} from 'react-router-dom'
 
 
@@ -37,27 +37,44 @@ const handleSubmit = async (e) => {
 
     return(
     <div> 
-        <h2>Welcome to BoxerGram</h2>
-        <h4>Register</h4>
-        <div>
+       
+    
+    <h2>Welcome to The ComicBook shelf</h2>
    
         
 <div className='login'>
-    
-    <form className='form' onSubmit={handleSubmit}>
-    <input type='text' name="username" value={formValues.username} placeholder="username" onChange={handleChange}/>
-    
-
-    <input type="email" name="email" value={formValues.email}  placeholder="Email" onChange={handleChange}/>
    
-    
-    <input type="password" name="password" value={formValues.password} placeholder="Password" onChange={handleChange}/>
-    <Button  variant='danger' type="submit"  className="submit">Register</Button>
-    </form>
-   
+    <Form className='loginform' onSubmit={handleSubmit}> 
+    <h2>Register</h2>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" name='email'  onChange={handleChange} value={formValues.email} />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Username</Form.Label>
+    <Form.Control type="text" placeholder="Create username" name='username'  onChange={handleChange} value={formValues.username} />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" name='password' value={formValues.password} onChange={handleChange}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+  </Form.Group>
+  <Button disabled={!formValues.email || !formValues.password} variant="primary" type="submit">
+    Register
+  </Button> 
+ 
+</Form>
+  
+  
 </div>
 </div>
-    </div>
     )
 }
 

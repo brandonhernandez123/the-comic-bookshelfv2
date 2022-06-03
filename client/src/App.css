@@ -343,8 +343,8 @@ body{
   background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;}
 
 .dcsearch{
-  background-color: lightblue;
-}
+  background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;}
 
 .comicsearchbutton{
   background-color: black;
@@ -369,5 +369,19 @@ body{
 }
 
 .searchaccord{
-  margin-top: 50px;
+  margin-top: 50px ;
+}
+
+#comicvine{
+  color: #67CD84;
+}
+
+#vine{
+  color: yellow;
+}
+
+#search{
+  width: 200px;
+  background-color: red;
+  border-radius: 100px;
 }

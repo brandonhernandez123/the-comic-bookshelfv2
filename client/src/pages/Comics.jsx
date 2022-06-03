@@ -125,22 +125,25 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
 
       
         <Accordion  defaultActiveKey="0">
-      <Card>
-        <Card.Header>
           <ComicSearch eventKey="0">Search DC, DarkHorse Etc</ComicSearch>
-        </Card.Header>
         <Accordion.Collapse className='accordion' eventKey="0">
-          <Card.Body>
 
  <Col className='dcsearch'>
         <form onSubmit={getSearchResults}>
+          <h2>Search <span id='comicvine'>Comic</span> <span id='vine'>Vine's</span> Database</h2>
         <input
           type="text"
-          placeholder="search comics"
+          placeholder="ex; The Long Haloween, Flashpoint"
           value={searchQuery}
           onChange={getResults}
           required="true"
+          id='searchcomicinput'
         />
+
+        <p>When searching ComicVine, you need to search by the title of the comic, example: Gotham By Gaslight, New Krypton etc</p>
+        <br/>
+        <h5> You have the option of filtering by Release date (both dates must be filled)</h5>
+        <p>example: Searching Batman 08/01/2022 - 06/03/2022 will return results with Batman in the title(not series/volume)</p>
         <input
           type="date"
           placeholder="date"
@@ -153,19 +156,15 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
           value={enddateQuery}
           onChange={setEndDate}
         />
-        <button type="submit">Search</button>
+        <br/>
+        <button id='search' type="submit">Search</button>
       </form>
         </Col>
 
-          </Card.Body>
         </Accordion.Collapse>
-      </Card>
-      <Card>
-        <Card.Header>
           <ComicSearch eventKey="1">Search Marvel Comics</ComicSearch>
-        </Card.Header>
         <Accordion.Collapse  className='accordion' eventKey="1">
-          <Card.Body>
+          
   <Col>
          <form onSubmit={FetchMarvel}>
            <h2>Search <span id='marvel'>Marvel's</span> database</h2>
@@ -196,15 +195,14 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
           onChange={setMarvelDateEnd}
         />
         <br/>
-        <button type="submit">Search Marvel Comics</button>
+        <br/>
+        <button id='search' type="submit">Search</button>
       </form>
         
         </Col>
 
 
-          </Card.Body>
         </Accordion.Collapse>
-      </Card>
     </Accordion>
 
       </Row>
