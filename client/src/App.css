@@ -1,4 +1,4 @@
-body{
+body {
   overflow-x: hidden;
   width: 100%;
 }
@@ -97,7 +97,7 @@ body{
 
 /* css for comics page */
 .comicpage {
-  
+
   background-image: url(https://wallpaperaccess.com/full/96121.jpg);
   color: white;
   height: 100vh;
@@ -112,27 +112,22 @@ body{
 
 
 /* css for shelf page */
-.shelfwhole{
-   background: rgb(215, 215, 220) !important;
+.shelfwhole {
+  background: rgb(215, 215, 220) !important;
   background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
   height: 100%;
   background-size: cover;
-  
+
 }
 
 
 
 
 #shelf {
-  /* background-image: url(https://wallpaperaccess.com/full/153062.jpg);
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover;
-  height: max-content; */
+
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto;
-  /* background-color: darkred; */
   padding: 10px;
 }
 
@@ -159,7 +154,8 @@ body{
   width: 300px;
   margin: 0 auto;
 }
-.shelftitle{
+
+.shelftitle {
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
@@ -204,32 +200,32 @@ body{
     background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
     background-image: url(https://wallpaperaccess.com/full/6417422.jpg);
 
-    
+
     background-size: cover;
   }
 }
 
-#reviewbtn{
+#reviewbtn {
   opacity: 0;
 }
 
-.shelfcard:hover{
+.shelfcard:hover {
   background: rgb(226, 64, 64) !important;
   background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;
 }
 
-  #reviewbtn:hover{
+#reviewbtn:hover {
   opacity: 1;
-  
+
 }
 
-#comicpage{
+#comicpage {
   height: 100vh;
   width: 100%;
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto auto;
-  background-image: url(https://wallpaperaccess.com/full/96121.jpg);  
+  background-image: url(https://wallpaperaccess.com/full/96121.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: repeat-x;
@@ -237,8 +233,9 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
+
   /* For mobile phones: */
-  #comicpage{
+  #comicpage {
     height: 100vh;
     display: grid;
     row-gap: 10px;
@@ -246,148 +243,145 @@ body{
     background-color: darkred;
     padding: 10px;
   }
+
   body {
     width: 100%;
   }
 
-  .reviewcardimage{
+  .reviewcardimage {
     height: 600px;
   }
 
-  .charactersearchform{
+  .charactersearchform {
     margin-top: 50px;
   }
 }
 
-.charactersearchform{
+.charactersearchform {
   margin-top: 30px;
 }
 
-#reviewform{
+#reviewform {
   height: 80px;
   width: 100%;
   border: 1px solid black !important;
 }
 
-#submitbtn{
+#submitbtn {
   width: 80px;
   height: 25px;
   color: white;
   background-color: darkred;
 }
 
-/* #accordion{
-  /* background: rgb(226, 64, 64) !important;
-  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;} */ */
 
-  .shelfreview{
-    width: 100%;
-    height: max-content;
-    /* background: rgb(215, 215, 220) !important;
-    background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important; */
+
+.shelfreview {
+  width: 100%;
+  height: max-content;
+
   display: grid;
   row-gap: 50px;
-  grid-template-columns: auto  ;
+  grid-template-columns: auto;
   padding: 10px;
   color: white;
-  }
-
-  .reviewcard {
-    background-image: url(https://www.verdict.co.uk/wp-content/uploads/2017/09/get-into-comic-books-1038x778.jpg);
-  
-    background-color: rgba(0, 0, 0, .5);
-    color: white;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    text-align: center;
-  }
-
-  .reviewcard:hover{
-    background: rgb(215, 215, 220) !important;
-    background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
-    background-image: none;
-  }
-
-
-  .login{
-    background-image: url('./images/bookshelf.gif');
-    background-position: center;
-    height: 100vh;
-    color: white;
-  }
-
-  .loginform{
-    background-color: rgba(0, 0, 0, .5);   
-     border: 2px solid white;
-    height: 500px;
-    width: 400px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    text-align: center;  
 }
 
-.logininput{
+.reviewcard {
+  background-image: url(https://www.verdict.co.uk/wp-content/uploads/2017/09/get-into-comic-books-1038x778.jpg);
+
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  text-align: center;
+}
+
+.reviewcard:hover {
+  background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+  background-image: none;
+}
+
+
+.login {
+  background-image: url('./images/bookshelf.gif');
+  background-position: center;
+  height: 100vh;
+  color: white;
+}
+
+.loginform {
+  background-color: rgba(0, 0, 0, .5);
+  border: 2px solid white;
+  height: 500px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logininput {
   margin-top: 100px;
 }
 
-.shelfwhole{
+.shelfwhole {
   background: rgb(215, 215, 220) !important;
-    background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
-    height: 100%;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+  height: 100%;
 }
 
-.accordion{
-  /* background: rgb(215, 215, 220) !important;
-  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important; */
+.accordion {
+
   background-color: transparent;
   margin-top: 30px;
   margin: 0 auto;
 }
 
-.dcsearch{
+.dcsearch {
   background: rgb(215, 215, 220) !important;
   background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
   width: 100%;
   margin: 0 auto;
 }
 
-.comicsearchbutton{
+.comicsearchbutton {
   width: 50%;
   margin: 0 auto;
-  
+
 }
 
-.comicsearchbtn{
+.comicsearchbtn {
   width: 200px;
   color: white;
   background-color: transparent;
 }
 
-#searchcomicinput{
+#searchcomicinput {
   width: 250px;
   height: 40px;
   border-radius: 200px;
   color: red;
 }
 
-#marvel{
+#marvel {
   color: red;
 }
 
 
 
-#comicvine{
+#comicvine {
   color: #67CD84;
 }
 
-#vine{
+#vine {
   color: yellow;
 }
 
-#search{
+#search {
   width: 200px;
   background-color: red;
   border-radius: 100px;
@@ -395,11 +389,11 @@ body{
 }
 
 
-.searchaccord{
+.searchaccord {
   margin: 0 auto;
 }
 
-#feedwelcome{
+#feedwelcome {
   color: white;
   background-color: rgba(0, 0, 0, .5);
 

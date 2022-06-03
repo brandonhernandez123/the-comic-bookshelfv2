@@ -19,10 +19,11 @@ const Navigation = ({ authenticated, user, handleLogOut }) => {
             </Nav.Link>
           </Nav>
           <Nav>
-            {authenticated && user ? (<Nav.Link style={{ color: 'white' }} href="/shelf">
-              My Shelf
-            </Nav.Link>) : null}
-            
+            {authenticated && user ? (
+              <Nav.Link style={{ color: 'white' }} href="/shelf">
+                My Shelf
+              </Nav.Link>
+            ) : null}
           </Nav>
           <Nav>
             {
@@ -35,7 +36,9 @@ const Navigation = ({ authenticated, user, handleLogOut }) => {
                   Sign out
                 </Nav.Link>
               ) : (
-                <Nav.Link href="/login" style={{color: 'white'}}>Sign in</Nav.Link>
+                <Nav.Link href="/login" style={{ color: 'white' }}>
+                  Sign in
+                </Nav.Link>
               )
               //   <Nav.Link eventKey={2} href="/register">
               //   Register

@@ -9,7 +9,6 @@ const Shelf = (props) => {
   const [getProfile, setProfile] = useState([])
   const [myComics, setMyComics] = useState([])
   const [myReviews, setMyReviews] = useState([])
-  const [modalShow, setModalShow] = useState(false)
 
   // Method for getting profile info username, email.
   useEffect(() => {
@@ -21,7 +20,6 @@ const Shelf = (props) => {
     }
     fetchProfile()
   }, [])
-  console.log(myReviews)
 
   //   delete Method for Comics in shelf
 
@@ -48,7 +46,7 @@ const Shelf = (props) => {
   }
 
   return (
-    <div className='shelfwhole'>
+    <div className="shelfwhole">
       <br />
       <br />
       <br />
@@ -59,7 +57,7 @@ const Shelf = (props) => {
       <Container fluid id="shelf">
         <Row>
           {myComics.map((comic, index) => (
-            <Col className="shelfcard">
+            <Col key={comic.id} className="shelfcard">
               {myComics.length <= 0 ? (
                 <h2 color="white">You do not have any comics in your shelf.</h2>
               ) : (
@@ -106,18 +104,21 @@ const Shelf = (props) => {
       <br />
 
       <Container fluid className="shelfreview">
-        <h1 id='feedwelcome'>My Reviews</h1>
+        <h1 id="feedwelcome">My Reviews</h1>
         <Row>
           {myReviews.map((review, index) => (
-            <Col className="reviewcard">
+            <Col key={review.id} className="reviewcard">
               <h3 className="shelftitle">{review.title}</h3>
-              <img width={200} height={300} src={review.image} />
+              <img
+                width={200}
+                height={300}
+                src={review.image}
+                alt={review.image}
+              />
               <p id="description">
                 {review.review} /n Rating: {review.rating} out of 10
               </p>
-              <button onClick={() => RemoveReview(index)}>
-                    Delete Review
-                  </button>
+              <button onClick={() => RemoveReview(index)}>Delete Review</button>
               <Accordion
                 className="bg-danger"
                 id="accordion"
