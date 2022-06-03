@@ -91,7 +91,8 @@ body {
 #charactersearchbutton {
   width: 100px;
   border-radius: 50px;
-  background: white;
+  background: black;
+  color: white;
 }
 
 
