@@ -21,5 +21,21 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#8b0000",
-  "background_color": "#8b0000"
+  "background_color": "#8b0000",
+  "shortcuts": [
+    {
+      "name": "Search Comics",
+      "short_name": "Comics",
+      "description": "Search Comics",
+      "url": "/comics",
+      "icons": [{ "src": "comics.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Search Characters",
+      "short_name": "Characters",
+      "description": "Learn more about your favorite characters",
+      "url": "/characters",
+      "icons": [{ "src": "characters.png", "sizes": "192x192" }]
+    }
+  ]
 }
