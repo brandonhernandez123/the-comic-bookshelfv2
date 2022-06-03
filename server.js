@@ -1,10 +1,9 @@
-const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
 const path = require('path')
 const express = require('express')
-
+const app = express()
 const MyComicRoutes = require('./routes/MyComicRoutes')
 const ReviewedComics = require('./routes/ReviewRoutes')
 const UserRoutes = require('./routes/UserRoutes')
