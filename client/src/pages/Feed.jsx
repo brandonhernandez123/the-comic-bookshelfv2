@@ -27,6 +27,7 @@ const Feed = (props) => {
               src={review.image}
               height={800}
               width={250}
+              className='reviewcardimage'
             />
             <Card.Body>
               <Card.Title>

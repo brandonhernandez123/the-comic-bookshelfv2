@@ -120,19 +120,19 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
   return (
     <div className="comicpage">
       <h1>Search Comics to add to your Shelf</h1>
-      <Row>
+      <Row className='searchaccord'>
        
 
       
-        <Accordion defaultActiveKey="0">
+        <Accordion  defaultActiveKey="0">
       <Card>
         <Card.Header>
           <ComicSearch eventKey="0">Search DC, DarkHorse Etc</ComicSearch>
         </Card.Header>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse className='accordion' eventKey="0">
           <Card.Body>
 
- <Col>
+ <Col className='dcsearch'>
         <form onSubmit={getSearchResults}>
         <input
           type="text"
@@ -164,29 +164,38 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         <Card.Header>
           <ComicSearch eventKey="1">Search Marvel Comics</ComicSearch>
         </Card.Header>
-        <Accordion.Collapse eventKey="1">
+        <Accordion.Collapse  className='accordion' eventKey="1">
           <Card.Body>
   <Col>
          <form onSubmit={FetchMarvel}>
+           <h2>Search <span id='marvel'>Marvel's</span> database</h2>
         <input
           type="text"
-          placeholder="search comics"
+          placeholder="ex; The Amazing Spider-Man, Fantastic Four, Deadpool, Captain America, Star Wars"
           value={marvelSearch}
           onChange={setMarvelQuery}
           required="true"
+          id='searchcomicinput'
+          color='red'
         />
+        <br/>
+        <br/>
+        <h5> You have the option of filtering by Release date (both dates must be filled)</h5>
+        <p>example: To retrieve a more recent The Amazing Spider-Man issue you would search The Amazing Spider-Man - 05/01/2022 - 06/01/2022</p>
         <input
           type="date"
           placeholder="date"
           value={marvelStartDate}
           onChange={setMarvelDateStart}
         />
+        ---
         <input
           type="date"
           placeholder="date"
           value={marvelEndDate}
           onChange={setMarvelDateEnd}
         />
+        <br/>
         <button type="submit">Search Marvel Comics</button>
       </form>
         

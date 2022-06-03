@@ -39,7 +39,7 @@ const Characters = () => {
   return (
     <div className='characters'>
       <h1>Search Characters</h1>
-      <form onSubmit={getSearchResults}>
+      <form className='charactersearchform' onSubmit={getSearchResults}>
         <input
           id='charactersearch'
           type="text"

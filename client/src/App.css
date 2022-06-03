@@ -248,6 +248,18 @@ body{
   body {
     width: 100%;
   }
+
+  .reviewcardimage{
+    height: 600px;
+  }
+
+  .charactersearchform{
+    margin-top: 50px;
+  }
+}
+
+.charactersearchform{
+  margin-top: 30px;
 }
 
 #reviewform{
@@ -324,4 +336,38 @@ body{
   background: rgb(215, 215, 220) !important;
     background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
     height: 100%;
+}
+
+.accordion{
+  background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;}
+
+.dcsearch{
+  background-color: lightblue;
+}
+
+.comicsearchbutton{
+  background-color: black;
+  
+}
+
+.comicsearchbtn{
+  width: 200px;
+  color: white;
+  background-color: black;
+}
+
+#searchcomicinput{
+  width: 250px;
+  height: 40px;
+  border-radius: 200px;
+  color: red;
+}
+
+#marvel{
+  color: red;
+}
+
+.searchaccord{
+  margin-top: 50px;
 }

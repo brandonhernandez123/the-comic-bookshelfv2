@@ -14,11 +14,12 @@ const ComicSearch = ({children, eventKey, callback}) => {
     
     
     return(
-        <div>
+        <div className='comicsearchbutton'>
         <button
       type="button"
-      style={{ visibility: isCurrentEventKey ? 'visible' : 'inherit' }}
+      style={{ backgroundColor: isCurrentEventKey ? 'red' : 'blue' }}
       onClick={decoratedOnClick}
+      className='comicsearchbtn'
     >
       {children}
     </button>
