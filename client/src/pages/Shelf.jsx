@@ -106,7 +106,7 @@ const Shelf = (props) => {
       <br />
 
       <Container fluid className="shelfreview">
-        <h1 color="white">My Reviews</h1>
+        <h1 id='feedwelcome'>My Reviews</h1>
         <Row>
           {myReviews.map((review, index) => (
             <Col className="reviewcard">

@@ -1,5 +1,6 @@
 body{
   overflow-x: hidden;
+  width: 100%;
 }
 
 .App {
@@ -275,9 +276,9 @@ body{
   background-color: darkred;
 }
 
-#accordion{
-  background: rgb(226, 64, 64) !important;
-  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;}
+/* #accordion{
+  /* background: rgb(226, 64, 64) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(148, 44, 44) 48%, rgba(119, 7, 7, 1) 95%) !important;} */ */
 
   .shelfreview{
     width: 100%;
@@ -339,22 +340,30 @@ body{
 }
 
 .accordion{
-  background: rgb(215, 215, 220) !important;
-  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;}
+  /* background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important; */
+  background-color: transparent;
+  margin-top: 30px;
+  margin: 0 auto;
+}
 
 .dcsearch{
   background: rgb(215, 215, 220) !important;
-  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;}
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
+  width: 100%;
+  margin: 0 auto;
+}
 
 .comicsearchbutton{
-  background-color: black;
+  width: 50%;
+  margin: 0 auto;
   
 }
 
 .comicsearchbtn{
   width: 200px;
   color: white;
-  background-color: black;
+  background-color: transparent;
 }
 
 #searchcomicinput{
@@ -368,9 +377,7 @@ body{
   color: red;
 }
 
-.searchaccord{
-  margin-top: 50px ;
-}
+
 
 #comicvine{
   color: #67CD84;
@@ -384,4 +391,16 @@ body{
   width: 200px;
   background-color: red;
   border-radius: 100px;
+  margin: 0 auto;
+}
+
+
+.searchaccord{
+  margin: 0 auto;
+}
+
+#feedwelcome{
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+
 }

@@ -119,12 +119,15 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
 
   return (
     <div className="comicpage">
-      <h1>Search Comics to add to your Shelf</h1>
+      <br/>
+      <br/>
+      <h1 color='black'>Search Comics to add to your Shelf</h1>
+     
       <Row className='searchaccord'>
        
 
       
-        <Accordion  defaultActiveKey="0">
+        <Accordion id='accordion'  >
           <ComicSearch eventKey="0">Search DC, DarkHorse Etc</ComicSearch>
         <Accordion.Collapse className='accordion' eventKey="0">
 
@@ -166,7 +169,7 @@ const Comics = ({authenticated, user, setUser, checkToken, toggleAuthenticated})
         <Accordion.Collapse  className='accordion' eventKey="1">
           
   <Col>
-         <form onSubmit={FetchMarvel}>
+         <form  className='dcsearch'onSubmit={FetchMarvel}>
            <h2>Search <span id='marvel'>Marvel's</span> database</h2>
         <input
           type="text"

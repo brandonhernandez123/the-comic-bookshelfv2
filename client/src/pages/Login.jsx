@@ -21,7 +21,7 @@ const Login = (props) => {
           setFormValues({ email: '', password: '' })
           props.setUser(payload)
           props.toggleAuthenticated(true)
-          window.location.reload(true)
+          window.location.href = "/comics";
         } catch (error) {
          alert('login unsucessfull, please try again')
      }

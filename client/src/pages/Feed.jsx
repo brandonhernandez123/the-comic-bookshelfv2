@@ -19,6 +19,9 @@ const Feed = (props) => {
     <Container fluid className="feed">
       <h1 className="reviewtitle">Review feed</h1>
       <br />
+      <h2 id='feedwelcome'>Welcome to the Comic Bookshelf</h2>
+      <h3 id='feedwelcome'>Here you view other user's thoughts and reviews on comics they have read, from here you can add those comics to you shelf</h3>
+      <p id='feedwelcome'> Go to <a href='/comics'>Comics</a> to search and add to your shelf.</p>
       {reviews.map((review, index) => (
         <Row key={index}className="reviewfeed">
           <Card id="reviewcard">
@@ -34,7 +37,10 @@ const Feed = (props) => {
                 {review.title} reviewed by {review.User.username}
               </Card.Title>
               <Card.Text>
-                {review.review} | Rating: {review.rating} out of 10
+                REVIEW: {review.review} 
+              </Card.Text>
+              <Card.Text>
+                RATING: {review.rating} OUT OF 10
               </Card.Text>
               {props.authenticated && props.user ? ( <AddToShelf title={review.title} image={review.image} description={review.description} user={props.user} authenticated={props.authenticated} id={props.user.id} index={index} />) : (<p>Sign in to add to shelf</p>)}
              
