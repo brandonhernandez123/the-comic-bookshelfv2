@@ -226,7 +226,8 @@ body {
   display: grid;
   row-gap: 50px;
   grid-template-columns: auto auto auto auto;
-  background-image: url(https://wallpaperaccess.com/full/96121.jpg);
+  background: rgb(215, 215, 220) !important;
+  background: linear-gradient(180deg, rgb(193, 184, 184) 0%, rgb(0, 14, 87) 48%, rgb(52, 0, 58) 95%) !important;
   background-position: center;
   background-size: cover;
   background-repeat: repeat-x;
