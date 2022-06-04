@@ -98,8 +98,8 @@ body {
 
 /* css for comics page */
 .comicpage {
-
-  background-image: url(https://wallpaperaccess.com/full/96121.jpg);
+  background: rgb(117, 17, 17) !important;
+  background: linear-gradient(180deg, rgba(117, 17, 17, 1) 0%, rgba(0, 0, 0, 1) 48%, rgba(119, 7, 7, 1) 95%) !important;
   color: white;
   height: 100vh;
 }
