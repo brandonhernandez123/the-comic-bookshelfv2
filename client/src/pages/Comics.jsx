@@ -35,14 +35,14 @@ const Comics = ({
       e.preventDefault()
       if (enddateQuery && startdateQuery != null) {
         const res = await axios.get(
-          `${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery},cover_date:${startdateQuery}|${enddateQuery}&limit=50`
+          `https://app.cors.bridged.cc/?method=GET&url=${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery},cover_date:${startdateQuery}|${enddateQuery}&limit=50`
         )
         setSearchResults(res.data.results)
         toggleSearched(true)
         setSearchQuery('')
       } else {
         const res = await axios.get(
-          `${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=50`
+          `https://app.cors.bridged.cc/?method=GET&url=${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=50`
         )
         setSearchResults(res.data.results)
         toggleSearched(true)

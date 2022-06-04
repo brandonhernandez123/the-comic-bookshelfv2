@@ -11,7 +11,7 @@ const Characters = () => {
     try {
       e.preventDefault()
       const res = await axios.get(
-        `${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=15`
+        `https://app.cors.bridged.cc/?method=GET&url=${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=15`
       )
       setSearchResults(res.data.results)
       toggleSearched(true)
