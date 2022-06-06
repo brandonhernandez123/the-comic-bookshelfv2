@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { CHARACTER_COMIC_VINE, COMIC_VINE_API, format } from '../globals'
+import { BASE_URL} from '../globals'
 import { Row, Col, Container, Image } from 'react-bootstrap'
 
 const Characters = () => {
@@ -11,9 +11,9 @@ const Characters = () => {
     try {
       e.preventDefault()
       const res = await axios.get(
-        `https://app.cors.bridged.cc/?method=GET&url=${CHARACTER_COMIC_VINE}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=15`
+        `${BASE_URL}/characters`, {params: {searchQuery: searchQuery}}
       )
-      setSearchResults(res.data.results)
+      setSearchResults(res.data)
       toggleSearched(true)
       setSearchQuery('')
     } catch (error) {

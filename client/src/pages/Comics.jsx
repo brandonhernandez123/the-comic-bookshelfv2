@@ -7,7 +7,8 @@ import {
   MARVEL_COMIC_SEARCH,
   MARVEL_API,
   MARVEL_ORDERBY,
-  MARVEL_COMIC_SEARCH_NODATE
+  MARVEL_COMIC_SEARCH_NODATE,
+  BASE_URL
 } from '../globals'
 import { Container, Card, Row, Col, Accordion } from 'react-bootstrap'
 import AddToShelf from '../components/AddToShelf'
@@ -35,16 +36,16 @@ const Comics = ({
       e.preventDefault()
       if (enddateQuery && startdateQuery != null) {
         const res = await axios.get(
-          `https://app.cors.bridged.cc/?method=GET&url=${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery},cover_date:${startdateQuery}|${enddateQuery}&limit=50`
+          `${BASE_URL}/issuesdate`, {params: {searchQuery: searchQuery, startDate: startdateQuery, endDate: enddateQuery}}
         )
-        setSearchResults(res.data.results)
+        setSearchResults(res.data)
         toggleSearched(true)
         setSearchQuery('')
       } else {
         const res = await axios.get(
-          `https://app.cors.bridged.cc/?method=GET&url=${SearchbyIssue}${COMIC_VINE_API}${format}&filter=name:${searchQuery}&limit=50`
+          `${BASE_URL}/issues`, {params: {searchQuery: searchQuery}}
         )
-        setSearchResults(res.data.results)
+        setSearchResults(res.data)
         toggleSearched(true)
         setSearchQuery('')
       }
@@ -53,6 +54,7 @@ const Comics = ({
       throw error
     }
   }
+
 
   const getResults = (e) => {
     setSearchQuery(e.target.value)
@@ -214,7 +216,7 @@ const Comics = ({
 
       <Container id="comicpage" fluid>
         {searchResults.map((comic, index) => (
-          <Row key={comic.index}>
+          <Row key={comic.id}>
             <Col className="shelfcard">
               <Card style={{ width: '10rem' }}>
                 <Card.Img variant="top" src={comic.image.small_url} />

@@ -3,22 +3,16 @@ const cors = require('cors')
 const logger = require('morgan')
 const path = require('path')
 const express = require('express')
-const { createProxyMiddleware } = require('http-proxy-middleware')
+const axios = require('axios')
 
 const MyComicRoutes = require('./routes/MyComicRoutes')
 const ReviewedComics = require('./routes/ReviewRoutes')
 const UserRoutes = require('./routes/UserRoutes')
 const AuthRoutes = require('./routes/AuthRoutes')
+const ComicVineRoutes = require('./routes/ComicVineRoutes')
 
 const PORT = process.env.PORT || 3001
 const app = express()
-
-const options = {
-  target: 'https://comicvine.gamespot.com/api/', // target host with the same base path
-  changeOrigin: true // needed for virtual hosted sites
-}
-
-const comicvineapiproxy = createProxyMiddleware(options)
 
 app.use(cors())
 app.use(logger('dev'))
@@ -32,7 +26,7 @@ app.use(
   ReviewedComics,
   UserRoutes,
   AuthRoutes,
-  comicvineapiproxy
+  ComicVineRoutes
 )
 
 app.get('*', (req, res) => {
