@@ -1,5 +1,5 @@
 {
-  "name": "The Comic Bookshelf V2",
+  "name": "comic_bookshelf",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

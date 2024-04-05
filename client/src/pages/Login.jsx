@@ -29,7 +29,7 @@ const Login = (props) => {
 
       <div className="login">
         <Form className="loginform" onSubmit={handleSubmit}>
-          <h2>Sign in</h2>
+          {/* <h2>Sign in</h2>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -69,7 +69,9 @@ const Login = (props) => {
             Not Signed up yet? click <Nav.Link href="/register">
               Here
             </Nav.Link>{' '}
-          </p>
+          </p> */}
+          <h1>Login is Currently under Maintainence</h1>
+          <p>You can still search comics and Characters!</p>
         </Form>
       </div>
     </div>

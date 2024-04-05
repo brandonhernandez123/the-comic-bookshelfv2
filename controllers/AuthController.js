@@ -38,7 +38,9 @@ const SignUp = async (req, res) => {
     })
     res.send({ user })
   } catch (error) {
+    console.log("Account not created")
     throw error
+
   }
 }
 

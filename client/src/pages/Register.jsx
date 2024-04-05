@@ -39,8 +39,14 @@ const Register = (props) => {
       <h2>Welcome to The ComicBook shelf</h2>
 
       <div className="login">
+
+
+
         <Form className="loginform" onSubmit={handleSubmit}>
-          <h2>Register</h2>
+
+
+          <h1>Register is Currently under Maintainence</h1>
+          {/* <h2>Register</h2>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -81,7 +87,8 @@ const Register = (props) => {
             type="submit"
           >
             Register
-          </Button>
+          </Button> */}
+          <p>You can still search comics and Characters!</p>
         </Form>
       </div>
     </div>

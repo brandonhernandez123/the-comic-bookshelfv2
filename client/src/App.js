@@ -63,6 +63,20 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route
+              path="/comics"
+              component={(props) => (
+                <Comics
+                  {...props}
+                  user={user}
+                  authenticated={authenticated}
+                  userId={userId}
+                  setUser={setUser}
+                  checkToken={checkToken}
+                  toggleAuthenticated={toggleAuthenticated}
+                />
+              )}
+            />
             <Route exact path="/register" component={Register} />
 
             <Route exact path="/login">
@@ -87,20 +101,6 @@ function App() {
               component={Characters}
               user={user}
               authenticated={authenticated}
-            />
-            <Route
-              path="/comics"
-              component={(props) => (
-                <Comics
-                  {...props}
-                  user={user}
-                  authenticated={authenticated}
-                  userId={userId}
-                  setUser={setUser}
-                  checkToken={checkToken}
-                  toggleAuthenticated={toggleAuthenticated}
-                />
-              )}
             />
             <Route
               path="/shelf"
