@@ -29,6 +29,9 @@
     "sequelize": "^6.37.2"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "14.21.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonhernandez123/the-comic-bookshelfv2.git"
